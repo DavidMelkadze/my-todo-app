@@ -7,7 +7,7 @@ Features include: add/complete/delete tasks, **All/Active/Completed tabs**, **lo
 
 ## 🚀 **Live Demo**
 
-*(Optional)* Deploy with Vercel, Netlify, or GitHub Pages and paste the link here.
+*https://my-todo-app-vert-pi.vercel.app/
 
 ---
 
