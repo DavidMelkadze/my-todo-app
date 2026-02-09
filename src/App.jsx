@@ -20,12 +20,24 @@ export default function App() {
     { input: 'Read a book', completed: true },
   ])
 
+  const handleAddTodo = (newTodo) => {
+    const updatedTodos = [...todos, {input: newTodo, completed: false }]
+
+    setTodos(updatedTodos) 
+  }
+
+  const handleEditTodo = (index, updatedTodo) => {
+  }
+
+  const handleDeleteTodo = (index) => {
+  }
+
   return (
     <>
       <Header todos={todos} />
       <Tabs todos={todos} />
       <TodoList todos={todos} />
-      <TodoInput />
+      <TodoInput handleAddTodo={handleAddTodo} />
       
     </>
   )
