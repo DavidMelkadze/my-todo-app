@@ -5,7 +5,7 @@ export default function Tabs(props) {
     const tabs = ['All', 'Active', 'Completed']
 
   return (
-    <nav className="tab-container">
+    <nav>
         
       {tabs.map((tab, tabIndex) => {
 

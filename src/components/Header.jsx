@@ -9,7 +9,7 @@ export default function Header(props) {
     const taskOrTasks = areTasksPlural ? 'tasks' : 'task'
 
   return (
-    <header>
+    <header >
       <h1>My Todo App</h1>
       <h2>You have {activeTodos} open {taskOrTasks}</h2>
     </header>

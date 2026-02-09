@@ -5,7 +5,7 @@ export default function TodoCard(props) {
   
 
   return (
-    <div className="todo-item">
+    <div className={"todo-item" + (todo.completed ? ' completed' : '')}>
       <p>{todo.input}</p>
       <div className="todo-buttons">
         <button onClick={ () => {

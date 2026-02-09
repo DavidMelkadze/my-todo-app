@@ -1,4 +1,4 @@
-import { useState, useEffect, use } from 'react'
+import { useState, useEffect } from 'react'
 import Header from './components/Header'
 import Tabs from './components/Tabs'
 import TodoList from './components/TodoList'
@@ -14,6 +14,22 @@ export default function App() {
   ])
 
   const  [selectedTab, setSelectedTab] = useState('Active')
+
+  const [theme, setTheme] = useState(() => {
+    try {
+      const saved = localStorage.getItem('todo-theme')
+      return saved || 'light'
+    } catch (e) {
+      return 'light'
+    }
+  })
+
+  useEffect(() => {
+    try {
+      document.documentElement.setAttribute('data-theme', theme)
+      localStorage.setItem('todo-theme', theme)
+    } catch (e) {}
+  }, [theme])
 
   const handleAddTodo = (newTodo) => {
     const updatedTodos = [...todos, {input: newTodo, completed: false }]
@@ -44,14 +60,26 @@ export default function App() {
 
   useEffect(() => {
     if (!localStorage || !localStorage.getItem('todo-app')) { return }
-     let db = JSON.parse(localStorage.getItem('todo-app'))
+    let db = JSON.parse(localStorage.getItem('todo-app'))
+    if (db && db.todos && Array.isArray(db.todos) && db.todos.length > 0) {
       setTodos(db.todos)
+    }
   }, [])
 
 
   return (
     <>
-      <Header todos={todos} />
+
+      <div className="app-container">
+        <button
+          className="theme-toggle"
+          onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
+          aria-label="Toggle theme"
+        >
+          {theme === 'light' ? 'Dark Mode' : 'Light Mode'}
+        </button>
+
+        <Header todos={todos} />
       <Tabs 
         selectedTab={selectedTab} 
         setSelectedTab={setSelectedTab}
@@ -62,7 +90,7 @@ export default function App() {
         handleCompleteTodo={handleCompleteTodo}
         handleDeleteTodo={handleDeleteTodo} />
       <TodoInput handleAddTodo={handleAddTodo} />
-      
+      </div>
     </>
   )
 }
