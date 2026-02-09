@@ -7,7 +7,7 @@ Features include: add/complete/delete tasks, **All/Active/Completed tabs**, **lo
 
 ## 🚀 **Live Demo**
 
-*https://my-todo-app-vert-pi.vercel.app/
+**https://my-todo-app-vert-pi.vercel.app/**
 
 ---
 
