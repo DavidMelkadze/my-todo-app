@@ -46,6 +46,7 @@ TodoInput.jsx	Input + Enter handling
 TodoList.jsx	Todo list rendering + filtering
 TodoCard.jsx	Individual todo row (Done/Delete)
 Tabs.jsx	All / Active / Completed tabs
+Header.jsx	Display header + active task count
 index.css	Theme variables, layout, typography
 🛠 Tech Stack
 
@@ -53,7 +54,7 @@ React (functional components + hooks)
 
 JavaScript (ES6+)
 
-CSS (custom properties, responsive)
+CSS / Tailwind (responsive, dark mode)
 
 Vite (dev server / build)
 
@@ -67,7 +68,7 @@ Immutability patterns and avoiding direct object mutation
 
 Handling keyboard events (Enter) and improving focus UX
 
-Theming with CSS custom properties and data-theme
+Theming with Tailwind + CSS custom properties
 
 Building a simple, responsive, accessible UI
 
@@ -81,27 +82,27 @@ Keys / Identity: consider adding stable id properties to todos (timestamp/UUID) 
 
 🌟 Possible Future Improvements
 
-Add stable IDs to each todo and refactor handlers to use them.
+Add stable IDs to each todo and refactor handlers to use them
 
-Toggle completed/uncompleted status dynamically.
+Toggle completed/uncompleted dynamically
 
-Add undo for deletes or a trash area.
+Add undo for deletes or a trash area
 
-Include sorting, due dates, priorities, or tags.
+Include sorting, due dates, priorities, or tags
 
-Add animations, transitions, or micro-interactions.
+Add animations, transitions, or micro-interactions
 
-Write unit tests for handlers (Jest + React Testing Library).
+Write unit tests (Jest + React Testing Library)
 
-Improve accessibility: ARIA roles, better screen-reader announcements.
+Improve accessibility (ARIA roles, better screen-reader announcements)
 
-Optimize localStorage writes (debounce or batch updates for large lists).
+Optimize localStorage writes (debounce or batch updates for large lists)
 
 ♿ Accessibility
 
-Inputs and buttons are keyboard-accessible.
+Inputs and buttons are keyboard-accessible
 
-Add aria-label attributes where needed for better screen-reader support.
+Add aria-label attributes where needed for better screen-reader support
 
 🙏 Acknowledgements
 
@@ -109,4 +110,5 @@ Built as a learning / portfolio project, iterated with styling and UX improvemen
 
 👨‍💻 Author
 
-David — Frontend developer in progress 🚀
+David — Frontend Developer in progress 🚀
+Focused on building clean, interactive React apps
